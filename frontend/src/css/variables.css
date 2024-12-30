@@ -1,0 +1,12 @@
+:root {
+  --primary-color: #00afef; /* Main primary color */
+  --secondary-color: #59a30e; /* Secondary or accent color */
+  --white: #fff;
+  --border-color: #dcdcdc;
+  --text--light-gray: #a3a3a3;
+  --text-dark-shade: #1d1d1d;
+  --lime-green: #a8d57a;
+  --dark-gray: #333333; /* Dark gray for text or backgrounds */
+  --medium-gray: #5c5c5c; /* Neutral gray */
+  --light-blue: #10a6de; /* Light blue for highlights or buttons */
+}
