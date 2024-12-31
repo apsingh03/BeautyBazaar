@@ -159,7 +159,32 @@ const Footer: React.FC = () => {
         <div></div>
       </div>
 
-      <div className=" bg-white ">
+      <div className="bg-white hidden md:grid grid-cols-3 py-5 px-10 border ">
+        {footerData.map((item, index) => (
+          <div className="space-y-5" key={index}>
+            <h6 className="uppercase text-md font-medium text-[--dark-gray] ">
+              {item?.title}
+            </h6>
+
+            <div className="">
+              {item?.child.map((child, idx) => {
+                return (
+                  <div key={idx} className="py-1 ">
+                    <Link
+                      href={child?.routeLink}
+                      className="capitalize text-base font-normal text[--medium-gray] hover:text-[#027DAC]  "
+                    >
+                      {child?.title}
+                    </Link>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className=" bg-white block md:hidden ">
         {footerData.map((item, index) => (
           <div key={index} className="mb-1">
             <button

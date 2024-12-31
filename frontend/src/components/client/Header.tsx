@@ -59,11 +59,16 @@ export const Header: React.FC = () => {
             </p>
           </div>
 
-          <div className=" flex flex-row items-center gap-1 cursor-pointer">
-            <IoCartOutline color="#00AFEF" size={22} />
-            <p className=" text-sm font-medium text-black hidden md:block  ">
-              Cart
-            </p>
+          <div className=" ">
+            <Link
+              href="/checkout"
+              className="flex flex-row items-center gap-1 cursor-pointer"
+            >
+              <IoCartOutline color="#00AFEF" size={22} />
+              <p className=" text-sm font-medium text-black hidden md:block  ">
+                Cart
+              </p>
+            </Link>
           </div>
         </div>
       </header>

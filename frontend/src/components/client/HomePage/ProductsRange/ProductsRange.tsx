@@ -48,6 +48,9 @@ const ProductsRange: React.FC<ProductProps> = ({
   description,
   products,
 }) => {
+  const trimmedCategory = category.trim().replace(/\s+/g, "-");
+
+  // console.log("trimmedCategory - ", trimmedCategory);
   return (
     <section className="px-3 sm:px-14 md:px-16 lg:px-20 xl:px-24 py-4 sm:py-8 space-y-5 ">
       <div className="flex flex-row justify-between">
@@ -70,8 +73,8 @@ const ProductsRange: React.FC<ProductProps> = ({
           // pagination={{ clickable: true }}
           // scrollbar={{ draggable: false }}
           navigation={{
-            nextEl: ".custom-next", // Selector for the custom next button
-            prevEl: ".custom-prev", // Selector for the custom prev button
+            nextEl: `.${trimmedCategory}custom-next`, // Selector for the custom next button
+            prevEl: `.${trimmedCategory}custom-prev`, // Selector for the custom prev button
           }}
           slidesPerView={2}
           breakpoints={{
@@ -96,8 +99,8 @@ const ProductsRange: React.FC<ProductProps> = ({
               spaceBetween: 10,
             },
           }}
-          onSwiper={(swiper) => console.log(swiper)}
-          onSlideChange={() => console.log("slide change")}
+          // onSwiper={(swiper) => console.log(swiper)}
+          // onSlideChange={() => console.log("slide change")}
           className="swiper service-post-thumb-slider"
         >
           {products.map((product, idx) => {
@@ -118,10 +121,14 @@ const ProductsRange: React.FC<ProductProps> = ({
           })}
         </Swiper>
 
-        <div className="custom-prev absolute top-1/2 z-10 -left-2 sm:-left-12 text-white bg-[#30363C] p-2 rounded-full cursor-pointer">
+        <div
+          className={`${trimmedCategory}custom-prev absolute top-1/2 z-10 -left-2 sm:-left-12 text-white bg-[#30363C] p-2 rounded-full cursor-pointer`}
+        >
           <FaAngleLeft size={20} color="#fff" />
         </div>
-        <div className="custom-next absolute  top-1/2 z-10 -right-2 sm:-right-12 text-white bg-[#30363C] p-2 rounded-full cursor-pointer">
+        <div
+          className={`${trimmedCategory}custom-next absolute  top-1/2 z-10 -right-2 sm:-right-12 text-white bg-[#30363C] p-2 rounded-full cursor-pointer`}
+        >
           <FaAngleRight size={20} color="#fff" />
         </div>
       </div>

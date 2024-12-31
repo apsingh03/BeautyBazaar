@@ -6,7 +6,7 @@ export const SubHeader: React.FC = () => {
     {
       id: 0,
       title: "Home",
-      routeLink: "",
+      routeLink: "/",
       subMenu: [
         { id: 0, title: "Face wash", routeLink: "" },
         { id: 1, title: "Sunscreen", routeLink: "" },
@@ -17,7 +17,7 @@ export const SubHeader: React.FC = () => {
     {
       id: 1,
       title: "Face",
-      routeLink: "",
+      routeLink: "/product-category/skin",
       subMenu: [
         { id: 0, title: "Shampoo", routeLink: "" },
         { id: 1, title: "Hair oil", routeLink: "" },
@@ -27,7 +27,7 @@ export const SubHeader: React.FC = () => {
     {
       id: 2,
       title: "Hair",
-      routeLink: "",
+      routeLink: "/product-category/hair",
       subMenu: [
         { id: 0, title: "Shampoo", routeLink: "" },
         { id: 1, title: "Hair oil", routeLink: "" },
@@ -37,7 +37,7 @@ export const SubHeader: React.FC = () => {
     {
       id: 3,
       title: "MakeUp",
-      routeLink: "",
+      routeLink: "/product-category/makeup-products",
       subMenu: [
         { id: 0, title: "Lipstic", routeLink: "" },
         { id: 1, title: "Foundation", routeLink: "" },
@@ -47,7 +47,7 @@ export const SubHeader: React.FC = () => {
     {
       id: 0,
       title: "body",
-      routeLink: "",
+      routeLink: "/product-category/body",
       subMenu: [
         { id: 0, title: "Body Lotion", routeLink: "" },
         { id: 1, title: "Soap", routeLink: "" },
@@ -57,7 +57,7 @@ export const SubHeader: React.FC = () => {
     {
       id: 0,
       title: "baby",
-      routeLink: "",
+      routeLink: "/product-category/for-babies",
       subMenu: [
         { id: 0, title: "Baby Shampoo ", routeLink: "" },
         { id: 1, title: "Baby Lotion", routeLink: "" },
@@ -66,7 +66,7 @@ export const SubHeader: React.FC = () => {
     {
       id: 0,
       title: "combo",
-      routeLink: "",
+      routeLink: "/product-category/combos",
       subMenu: [
         { id: 0, title: "Combos", routeLink: "" },
         { id: 1, title: "Kits", routeLink: "" },
