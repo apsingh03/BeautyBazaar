@@ -69,11 +69,11 @@ const BannerCarousel: React.FC = () => {
               <Image
                 src={data?.imageLink}
                 alt={data?.imageAlt}
-                layout="responsive"
-                width={1200}
+                width={1300}
                 height={310}
-                objectFit="contain"
+                style={{ objectFit: "contain" }}
                 loading={idx === 0 ? "eager" : "lazy"}
+                priority={idx === 0} // Add priority to the first image or the critical image
               />
             </SwiperSlide>
           );

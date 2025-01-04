@@ -115,18 +115,17 @@ const Checkout = () => {
             <div className="flex flex-row items-center gap-2">
               <CiMemoPad size={30} color="#1d1d1d" />
               <p className="text-sm font-medium text-[--text-dark-shade]">
-                {" "}
-                Cart details{" "}
+                Cart details
               </p>
             </div>
 
             <div className=" flex flex-row gap-2 text-sm">
               <p className="font-light text-[#505050]  ">
-                Total items : <span className="font-semibold">4 </span>{" "}
+                Total items : <span className="font-semibold">4 </span>
               </p>
               <p className="font-light text-[#505050] "> {" | "} </p>
               <p className="font-light text-[#505050]">
-                To pay : <span className="font-semibold">₹1,193.20</span>{" "}
+                To pay : <span className="font-semibold">₹1,193.20</span>
               </p>
             </div>
           </div>

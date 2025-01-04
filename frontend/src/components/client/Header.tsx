@@ -4,19 +4,20 @@ import { LuCircleUser } from "react-icons/lu";
 import { IoCartOutline } from "react-icons/io5";
 import { RiAdminLine } from "react-icons/ri";
 import Link from "next/link";
+import { FaRegUser } from "react-icons/fa6";
 
 export const Header: React.FC = () => {
   return (
     <>
       <div
-        className="sticky top-0 z-20 p-2 flex flex-col items-center  sm:flex-row sm:justify-between gap-3 sm:items-start
+        className=" z-20 px-2 py-1 flex flex-col items-center  sm:flex-row sm:justify-between gap-3 sm:items-start
        bg-red-600 sm:bg-black md:bg-yellow-600 lg:bg-blue-700  xl:bg-green-700 text-white text-sm "
       >
         <p>Asia's 1st Brand with Made Safe Certified Products</p>
         <p>Get 3 Products @FLAT899 on selected products </p>
       </div>
 
-      <header className="flex flex-row justify-between items-center py-3 px-3 sm:px-10 md:px-14 lg:px-20 xl:px-24 bg-[--white]">
+      <header className=" sticky top-0 z-20 flex flex-row justify-between items-center py-2 px-3 sm:px-10 md:px-14 lg:px-20 xl:px-24 bg-[--white]">
         <div>
           <Link href={"/"}>
             <span className="font-bold text-xl text-[--light-blue]">
@@ -45,21 +46,61 @@ export const Header: React.FC = () => {
         </div>
 
         <div className=" flex flex-row sm:flex-row md:flex-row gap-3 sm:gap-2 md:gap-1 lg:gap-3 items-center">
-          <div className=" flex flex-row items-center gap-1 cursor-pointer">
+          <div
+            className=" flex flex-row items-center gap-1 cursor-pointer"
+            title="Admin Panel"
+          >
             <RiAdminLine color="#00AFEF" size={22} />
             <p className="text-sm font-medium text-black hidden md:block  ">
               Admin Panel
             </p>
           </div>
 
-          <div className=" flex flex-row items-center gap-1 cursor-pointer">
+          <div
+            className=" flex flex-row items-center gap-1 cursor-pointer group relative  "
+            title="Login"
+          >
             <LuCircleUser color="#00AFEF" size={22} />
             <p className=" text-sm font-medium text-black hidden md:block  ">
               Hello, Login
             </p>
+
+            <div
+              className="space-y-5  hidden group-hover:block absolute top-full -left-10 bg-white justify-center z-20 py-2 px-1
+            border-t-2 border-[#00afef] divide-y shadow-2xl 
+            "
+            >
+              <div className="flex flex-row gap-5 items-center">
+                <div>
+                  <FaRegUser size={18} color="#00afef" />
+                </div>
+                <p className="text-sm font-medium ">Your Profile</p>
+              </div>
+
+              <div className="flex flex-row gap-5 items-center">
+                <div>
+                  <FaRegUser size={18} color="#00afef" />
+                </div>
+                <p className="text-sm font-medium ">Your Orders</p>
+              </div>
+
+              <div className="flex flex-row gap-5 items-center">
+                <div>
+                  <FaRegUser size={18} color="#00afef" />
+                </div>
+                <p className="text-sm font-medium "> Saved Cards</p>
+              </div>
+
+              <div className="flex flex-row gap-5 items-center">
+                <div>
+                  <FaRegUser size={18} color="#00afef" />
+                </div>
+                <p className="text-sm font-medium ">Contact Us</p>
+              </div>
+            </div>
           </div>
 
-          <div className=" ">
+          <div className="" title="Cart">
             <Link
               href="/checkout"
               className="flex flex-row items-center gap-1 cursor-pointer"

@@ -153,8 +153,9 @@ const Footer: React.FC = () => {
           src="https://images.mamaearth.in/png/web-payments.png"
           height={100}
           width={600}
-          objectFit="contain"
+          style={{ objectFit: "contain" }}
           alt="payment options"
+          loading="lazy"
         />
         <div></div>
       </div>
@@ -241,15 +242,17 @@ const Footer: React.FC = () => {
             src="https://images.mamaearth.in/wysiwyg/PLAYSTORE18Apr.png"
             width={100}
             height={100}
-            objectFit="contain"
+            style={{ objectFit: "contain" }}
             alt="play store"
+            loading="lazy"
           />
           <Image
             src="https://images.mamaearth.in/wysiwyg/APPSTORE18Apr.png"
             width={100}
             height={100}
-            objectFit="contain"
+            style={{ objectFit: "contain" }}
             alt="apple store"
+            loading="lazy"
           />
         </div>
       </div>

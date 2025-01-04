@@ -75,7 +75,7 @@ export const SubHeader: React.FC = () => {
   ];
 
   return (
-    <div className="flex flex-row justify-between py-3 px-3 sm:px-10 md:px-16 lg:px-20 xl:px-24 bg-[--white] border-t border-[--border-color] shadow-md">
+    <div className=" sticky top-12 z-20 flex flex-row justify-between py-5 px-3 sm:px-10 md:px-16 lg:px-20 xl:px-24 bg-[--white] border-t border-[--border-color] shadow-md  ">
       {menu.map((data, idx) => {
         const isLast = idx === menu.length - 1 || idx === menu.length - 2; // Check if it's the last menu item
         return (

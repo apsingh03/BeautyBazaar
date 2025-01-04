@@ -38,14 +38,14 @@ const Product: React.FC<ProductProps> = ({
   return (
     <div className="border  rounded-md">
       <div>
-        <Link href="#">
+        <Link href={`/product/${name}`}>
           <Image
             src={
               "https://images.mamaearth.in/catalog/product/1/-/1-wid-ingredients.jpg?format=auto&width=400&height=400"
             }
             width={200}
             height={200}
-            objectFit="cover"
+            style={{ objectFit: "cover" }} // Replace objectFit
             loading="lazy"
             alt="Ubtan Facewash"
           />
