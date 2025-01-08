@@ -46,7 +46,8 @@ export const Header: React.FC = () => {
         </div>
 
         <div className=" flex flex-row sm:flex-row md:flex-row gap-3 sm:gap-2 md:gap-1 lg:gap-3 items-center">
-          <div
+          <Link
+            href={"/admin/dashboard"}
             className=" flex flex-row items-center gap-1 cursor-pointer"
             title="Admin Panel"
           >
@@ -54,7 +55,7 @@ export const Header: React.FC = () => {
             <p className="text-sm font-medium text-black hidden md:block  ">
               Admin Panel
             </p>
-          </div>
+          </Link>
 
           <div
             className=" flex flex-row items-center gap-1 cursor-pointer group relative  "

@@ -16,4 +16,7 @@
   /* Light blue for highlights or buttons */
   --lightGray-bg-color: #f4f6f8;
   --text-gray1: #727272;
+
+  /* Admin Panel */
+  --bg-admin: #1c2434;
 }
