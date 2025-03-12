@@ -1,12 +1,34 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { PiTextTFill } from "react-icons/pi";
 import { AiFillPlusCircle } from "react-icons/ai";
 
 import ModalWrapper from "../ModalWrapper";
 import TableWrapper from "../TableWrapper";
+// import { getParentMenuAsync } from "@/Redux/AdminSlices/Menu/parentMenuSlice";
+// import { useDispatch, useSelector } from "react-redux";
+// import { getParentFilterAsync } from "@/Redux/AdminSlices/Filter/parentFilterSlice";
+
 const AdminParentFilter = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
+
+  // const dispatch = useDispatch();
+
+  // const parentMenuRedux = useSelector((state) => state.admin_parentFilter.data);
+
+  // getParentMenuAsync;
+
+  // async function fetchParentFilter() {
+  //   //  setisLoadingTopProgress(30);
+  //   await dispatch(getParentFilterAsync());
+
+  //   //  setisLoadingTopProgress(100);
+  // }
+
+  // useEffect(() => {
+  //   fetchParentFilter();
+  //   return () => {};
+  // }, []);
 
   return (
     <div className="  bg-white px-3 py-6 shadow-lg">

@@ -139,6 +139,11 @@ db.testimonialDetails =
     DataTypes
   );
 
+db.AdminAuthRequestToken = require("./admin/AdminAuthRequestTokenModel.js")(
+  sequelize,
+  DataTypes
+);
+
 // --------------------------------- Filter Relations
 
 // childFilter --> parentFilter

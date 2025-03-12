@@ -1,6 +1,8 @@
 const db = require("../../models/");
 const bcrypt = require("bcrypt");
 var jwt = require("jsonwebtoken");
+const { generateToken } = require("../../utils/generateTokens");
+const { default: setTokensCookies } = require("../../utils/setTokensCookies");
 
 // Tables
 const AdminAuth = db.adminAuth;
@@ -40,6 +42,7 @@ const adminSignUp = async (req, res) => {
 
 const adminLogIn = async (req, res) => {
   try {
+    // console.log(" adminLogIn req.body ", req);
     const emailExistQuery = await AdminAuth.findOne({
       where: { email: req.body.email },
     });
@@ -48,25 +51,66 @@ const adminLogIn = async (req, res) => {
       bcrypt.compare(
         req.body.password,
         emailExistQuery.password,
-        function (err, result) {
+        async function (err, result) {
           if (err) {
             return res.status(500).send({ msg: "Something went wrong" });
           }
 
           if (result) {
-            const { id, fullName, email } = emailExistQuery;
-            const userObject = {
-              isUserLogged: true,
-              id,
-              fullName,
-              email,
-            };
+            // generate Token
+            const {
+              accessToken,
+              refreshToken,
+              accessTokenExp,
+              refreshTokenExp,
+            } = await generateToken(emailExistQuery);
 
-            var token = jwt.sign(userObject, "itsASecretKey");
+            setTokensCookies(
+              res,
+              accessToken,
+              refreshToken,
+              accessTokenExp,
+              refreshTokenExp
+            );
 
-            return res
-              .status(200)
-              .send({ msg: "Logged In Successfull", token });
+            // console.log(
+            //   "68 ---> ",
+            //   accessToken,
+            //   refreshToken,
+            //   accessTokenExp,
+            //   refreshTokenExp
+            // );
+
+            // set cookies
+
+            // send success response with token
+
+            // const { id, fullName, email } = emailExistQuery;
+            // const userObject = {
+            //   isUserLogged: true,
+            //   id,
+            //   fullName,
+            //   email,
+            // };
+
+            // //
+            // var token = jwt.sign(userObject, "itsASecretKey");
+
+            res.status(200).send({
+              user: {
+                id: emailExistQuery?.id,
+                email: emailExistQuery?.email,
+                fullName: emailExistQuery?.name,
+              },
+              msg: "Logged In Successfull",
+
+              access_token: accessToken,
+              refresh_token: refreshToken,
+              access_token_exp: accessTokenExp,
+              is_auth: true,
+            });
+
+            return res.status(200).send({ msg: "Logged In Successfull" });
           } else {
             return res.status(200).send({ msg: "Password Wrong" });
           }

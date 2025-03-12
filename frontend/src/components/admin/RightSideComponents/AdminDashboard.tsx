@@ -1,6 +1,46 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
+// import jwt from "jsonwebtoken";
+// import jwt_decode from "jwt-decode";
+var jwt = require("jsonwebtoken");
 
 const AdminDashboard = () => {
+  // const adminAuth = useSelector((state) => state.admin_auth);
+
+  // console.log("adminAuth - ", adminAuth);
+
+  // const getDecodedToken = () => {
+  //   const token = localStorage.getItem("adminLoggedToken");
+  //   // console.log("token ", token);
+  //   if (token) {
+  //     try {
+  //       var decoded = jwt.verify(
+  //         token,
+  //         "itsASecretKey",
+  //         function (err, decoded) {
+  //           console.log("19 - ", decoded);
+  //         }
+  //       );
+  //       // console.log("decoded - ", decoded);
+
+  //       return decoded;
+  //     } catch (error) {
+  //       console.error("Invalid token", error);
+  //       return null;
+  //     }
+  //   } else {
+  //     console.error("No token found!");
+  //   }
+  //   return null;
+  // };
+
+  // useEffect(() => {
+  //   const decodedToken = getDecodedToken();
+  //   console.log("Decoded Token: ", decodedToken);
+
+  //   return () => {};
+  // }, []);
+
   return (
     <div>
       <div className="grid grid-cols-12 gap-4">
@@ -134,3 +174,6 @@ const AdminDashboard = () => {
 };
 
 export default AdminDashboard;
+
+
+
